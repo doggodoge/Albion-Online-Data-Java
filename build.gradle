@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'me.mrgarymoore'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.session:spring-session-core'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// Useful extension to the standard library.
+	implementation 'com.google.guava:guava:29.0-jre'
+
+	// Object mapping serialization and deserialization library
+	implementation 'com.google.code.gson:gson:2.8.6'
+
+	// Alternative performant HTTP client and server.
+	implementation "com.squareup.okhttp3:okhttp:4.9.0"
+
+	// Allows the easy creation of HTTP client services.
+	implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+	// JSON converter for Retrofit
+	implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+}
+
+test {
+	useJUnitPlatform()
+}
