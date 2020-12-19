@@ -4,5 +4,5 @@
 For now this is the start of a Retrofit API with a few builders to make life easier.
 
 ## Long term plan
-* Get friendly API
-* Dashboard with automatically refreshing market values.
+- [ ] Get friendly API
+- [ ] Dashboard with automatically refreshing market values.
