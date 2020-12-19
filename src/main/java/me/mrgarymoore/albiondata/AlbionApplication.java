@@ -63,7 +63,12 @@ public class AlbionApplication {
 						.map(ItemPrice::getSellPriceMax)
 						.reduce(0, Integer::sum);
 
-				log.info("Total cost: " + NumberFormat.getNumberInstance(Locale.getDefault()).format(totalCost) + " silver");
+
+				String formattedTotalCost = NumberFormat
+						.getNumberInstance(Locale.getDefault())
+						.format(totalCost);
+						
+				log.info("Total: {} gold", formattedTotalCost);
 			} catch (IOException e) {
 				log.error("Failed to fetch items from REST API.");
 			}
