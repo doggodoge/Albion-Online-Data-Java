@@ -1,5 +1,11 @@
 package me.mrgarymoore.albiondata;
 
+/**
+ * Returns a comma separated list of qualities appropriate for ingestion into a
+ * RESTful API.
+ *
+ * @author Gary Moore
+ */
 public class AlbionQualityBuilder {
     private final StringBuilder stringBuilder = new StringBuilder();
 

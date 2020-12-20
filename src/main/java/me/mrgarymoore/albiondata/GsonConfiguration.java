@@ -15,6 +15,8 @@ public class GsonConfiguration {
         DateTimeFormatter dateTimeFormatter =
                 DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
         return new GsonBuilder()
+                // TODO: Extract the JsonSerializer and JsonDeserializer
+                //  implementations to their own files.
                 .registerTypeAdapter(LocalDateTime.class, (JsonDeserializer<LocalDateTime>) (json, typeOfT, context) ->
                         LocalDateTime.parse(json.getAsJsonPrimitive().getAsString(), dateTimeFormatter))
                 .registerTypeAdapter(LocalDateTime.class, (JsonSerializer<LocalDateTime>) (src, typeOfSrc, context) ->

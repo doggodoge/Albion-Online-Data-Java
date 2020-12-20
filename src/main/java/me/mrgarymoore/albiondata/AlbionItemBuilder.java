@@ -1,8 +1,20 @@
 package me.mrgarymoore.albiondata;
 
+/**
+ * Returns a comma separated list of items appropriate for ingestion into a
+ * RESTful API.
+ *
+ * @author Gary Moore
+ */
 public class AlbionItemBuilder {
     private final StringBuilder albionItems = new StringBuilder();
 
+    /**
+     * Appends to a comma separated string of item names.
+     *
+     * @param tier Tier of the item to append to the string of item names.
+     * @return {@link AlbionItemBuilder} containing appended item names.
+     */
     public AlbionItemBuilder bag(Tier tier) {
         switch (tier) {
             case ONE:
@@ -34,6 +46,12 @@ public class AlbionItemBuilder {
         return this;
     }
 
+    /**
+     * Get a comma separated list of item names appropriate for consumption in
+     * the RESTful API.
+     *
+     * @return Comma separated list of item names.
+     */
     public String build() {
         return albionItems
                 // Trim the trailing comma
