@@ -1,5 +1,8 @@
 package me.mrgarymoore.albiondata;
 
+// TODO: Write a code generator to produce an item builder based on items.json
+//  in the resources folder.
+
 /**
  * Returns a comma separated list of items appropriate for ingestion into a
  * RESTful API.
